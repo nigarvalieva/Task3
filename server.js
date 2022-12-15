@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-let card = [
+let cards = [
     {
         id: 1,
         cardNum: "4249 7866 5657 1426"
@@ -12,15 +12,15 @@ let card = [
     },
     {
         id: 3,
-        cardNum: "4006 2049 7347 6397"
+        cardNum: 4006204973476397
     },
     {
         id: 4,
-        cardNum: "4934 6861 5882 1461"
+        cardNum: 4934686158821461
     },
     {
         id: 5,
-        cardNum: "4744 6731 7265 7147"
+        cardNum: 4744673172657147
     }
 ]
 
@@ -29,11 +29,11 @@ app.get('/card', function (req, res) {
 })
 
 app.get('/card/:id', function (req, res) {
-    card.forEach((cart) => {
-        if (cart.id === req.params.id) {
-            res.send(cart.cardNum) 
-        } 
-    })
+    cards.forEach((card) => {
+        if(card.id == req.params.id){
+            res.send(card.cardNum) 
+        }})
+    
 })
 
 app.listen(3000, function () {
