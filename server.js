@@ -30,11 +30,13 @@ app.get('/card', function (req, res) {
 
 app.get('/card/:id', function (req, res) {
     card.forEach((cart) => {
-        if (cart.id === req.params.id) {
-            res.send(cart.cardNum) 
-        } 
+        if (cart.id == req.params.id){
+            console.log(cart)
+            res.send(cart.cardNum)            
+        }
     })
-})
+    
+  });
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
